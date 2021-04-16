@@ -105,7 +105,7 @@
                             @if($public_menu)
                             <ul class="navbar-nav main-menu ml-auto">
                                 <li>
-                                    <a href="{{ url('/game-mobile') }}">Home</a>
+                                    <a href="{{ url('game-mobile') }}">Home</a>
                                 </li>
                                 @foreach($public_menu as $menu)
                                     @if( $menu['child']->count() == 0 )
