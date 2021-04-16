@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <ul class="page-list">
                     <li><a href="{{ url('/game-pc') }}">Home</a></li>
-                    <li>{{ $title }}</li>
+                    <li>{!! Str::limit($title,20) !!}</li>
                 </ul>
             </div>
         </div>
@@ -22,6 +22,7 @@
             <div class="col-lg-10 mt-50">
                 <div class="blog-details__content">
                     <div class="header-image"><img src="{{ asset('public/website/assets/images/elements/header-el.png')}}" alt="image"></div>
+                    
                     <img src="{{asset('public/asset/blog/'.$detail->gambar)}}" alt="image">
                     <p>{!! $detail->konten !!}</p>
                 </div>
@@ -29,14 +30,14 @@
         </div>
         <!-- row end -->
         <div class="row justify-content-center mt-50">
-            <div class="col-lg-10">
+            <div class="col-lg-8">
                 <div class="author">
                     <div class="author__thumb">
                         <img src="{{asset('public/website/assets/images/icon/author.png')}}" alt="author">
                     </div>
                     <div class="author__content">
-                        <span class="top-title">About Author</span>
-                        <h2 class="name mb-3">{{ $detail->penulis }}</h2>
+                        <span class="top-title">Penulis</span>
+                        <h5 class="name">{{ $detail->penulis }}</h5>
                         <p><time datetime="{{date('d-m-Y', strtotime($detail->created_at))}}">{{date('d-m-Y', strtotime($detail->created_at))}}</time></p>
                     </div>
                 </div>

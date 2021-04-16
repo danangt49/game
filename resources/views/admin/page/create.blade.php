@@ -55,8 +55,8 @@
                         <div class="form-group">
                             <label for="">Layout</label>
                             <select class="form-control" name="layout">
-                            <option value="fullwitdh">Full Width</option>
-                            <option value="home">Home</option>
+                                <option value="pc">PC</option>
+                                <option value="mobile">MOBILE</option>
                             </select>
                             @if($errors->has('layout')) 
                                 <div class="error text-danger">{{$errors->first('layout')}}</div>

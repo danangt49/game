@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <h2 class="page-title">{{ $data1 }}</h2>
                 <ul class="page-list">
-                    <li><a href="{{ url('/game-pc') }}">Home</a></li>
+                    <li><a href="{{ url('/game-mobile') }}">Home</a></li>
                     <li>{{ $data1 }}</li>
                 </ul>
             </div>

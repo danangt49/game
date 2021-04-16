@@ -154,7 +154,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-7 mb-50">
-                        <h2 class="hero__title">{{ $title }}</h2>
+                        <h2 class="hero__title">{{ $judul }}</h2>
                         <p>{{$deskripsi_web}}</p>
                     </div>
                     <div class="col-lg-3 col-sm-7 mb-50">

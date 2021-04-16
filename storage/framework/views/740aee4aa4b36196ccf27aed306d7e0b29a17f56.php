@@ -155,7 +155,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-7 mb-50">
-                        <h2 class="hero__title"><?php echo e($title); ?></h2>
+                        <h2 class="hero__title"><?php echo e($judul); ?></h2>
                         <p><?php echo e($deskripsi_web); ?></p>
                     </div>
                     <div class="col-lg-3 col-sm-7 mb-50">

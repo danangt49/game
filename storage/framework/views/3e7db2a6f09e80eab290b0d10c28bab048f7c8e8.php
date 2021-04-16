@@ -37,14 +37,14 @@
                                 <div class="game-card">
                                     <div class="game-card__thumb">
                                         <img src="<?php echo e(asset('public/asset/game/'.$data->picture)); ?>" alt="image">
-                                        <h2><?php echo e($data->match_name); ?></h2>
-                                        <p><?php echo $data->description; ?></p>
-                                        <p><i class="las la-calendar"></i> Tanggal : <?php echo e(date('d-M-Y', strtotime($data->match_schedule))); ?></p>
-                                        <p><i class="las la-map"></i> Maps : <?php echo e($data->maps); ?></p>
-                                        <p><i class="las la-users"></i> Total Player : <?php echo e($data->players); ?></p>
-                                        <p><i class="las la-map-marker-alt"></i> Tipe : <?php echo e($data->match_type); ?></p>
-                                        <p><i class="las la-tag"></i> Biaya : <?php echo e($data->fee); ?></p>
-                                        <p><i class="las la-trophy"></i> Total Hadiah : <?php echo e($data->prize); ?></p>
+                                        <h4 style="padding-left:10px;"><?php echo e($data->match_name); ?></h4>
+                                        <span style="padding-left:10px;"><p><?php echo $data->description; ?></p></span>
+                                        <p style="padding-left:10px;"><i class="las la-calendar"></i> Tanggal : <?php echo e(date('d-M-Y', strtotime($data->match_schedule))); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-map"></i> Maps : <?php echo e($data->maps); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-users"></i> Total Player : <?php echo e($data->players); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-map-marker-alt"></i> Mode : <?php echo e($data->mode); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-tag"></i> Biaya : <?php echo e($data->fee); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-trophy"></i> Total Hadiah : <?php echo e($data->prize); ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -72,14 +72,14 @@
                                 <div class="game-card">
                                     <div class="game-card__thumb">
                                         <img src="<?php echo e(asset('public/asset/game/'.$data->picture)); ?>" alt="image">
-                                        <h2><?php echo e($data->match_name); ?></h2>
-                                        <p><?php echo $data->description; ?></p>
-                                        <p><i class="las la-calendar"></i> Tanggal : <?php echo e(date('d-M-Y', strtotime($data->match_schedule))); ?></p>
-                                        <p><i class="las la-map"></i> Maps : <?php echo e($data->maps); ?></p>
-                                        <p><i class="las la-users"></i> Total Player : <?php echo e($data->players); ?></p>
-                                        <p><i class="las la-map-marker-alt"></i> Tipe : <?php echo e($data->match_type); ?></p>
-                                        <p><i class="las la-tag"></i> Biaya : <?php echo e($data->fee); ?></p>
-                                        <p><i class="las la-trophy"></i> Total Hadiah : <?php echo e($data->prize); ?></p>
+                                        <h2 style="padding-left:10px;"><?php echo e($data->match_name); ?></h2> 
+                                        <span style="padding-left:10px;"><p><?php echo $data->description; ?></p></span>
+                                        <p style="padding-left:10px;"><i class="las la-calendar"></i> Tanggal : <?php echo e(date('d-M-Y', strtotime($data->match_schedule))); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-map"></i> Maps : <?php echo e($data->maps); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-users"></i> Total Player : <?php echo e($data->players); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-map-marker-alt"></i> Tipe : <?php echo e($data->match_type); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-tag"></i> Biaya : <?php echo e($data->fee); ?></p>
+                                        <p style="padding-left:10px;"><i class="las la-trophy"></i> Total Hadiah : <?php echo e($data->prize); ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="tab-pane" id="top-player" role="tabpanel">
                     <div class="single-matches-box">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center" style="padding-left:10px;">
                             <?php $__currentLoopData = $top; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <?php $username= Applib::getUsername($data->user_id); ?>
                             <div class="col-lg-12 mb-30" style="padding-top: 20px;">
@@ -108,8 +108,8 @@
                                     <div class="contact-item__icon">
                                         <i class="las la-trophy"></i>
                                     </div>
-                                    <div class="contact-item__content">
-                                        <h3 class="title"><?php echo e($username); ?></h3>
+                                    <div class="contact-item__content" >
+                                        <h3 class="title" ><?php echo e($username); ?></h3>
                                         <p>Point : <?php echo e($data->sum); ?></p>
                                     </div>
                                 </div>

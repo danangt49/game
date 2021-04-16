@@ -1,4 +1,4 @@
-@extends('layouts.website.app')
+@extends('layouts.website.page')
 @section('main')
 <section class="hero bg_img" data-background="{{ asset('public/website/assets/images/bg/featured.png') }}">
     <div class="container">
@@ -8,7 +8,7 @@
                     <span class="hero__sub-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s">{{ $slogan }}</span>
                     <h2 class="hero__title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">{{ $title }}</h2>
                     <p class=" wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.7s">{{ $deskripsi_web }}</p>
-                    <a href="#" class="cmn-btn wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.9s">Download now</a>
+                    <!--<a href="#" class="cmn-btn wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.9s">Download now</a>-->
                 </div>
             </div>
             <div class="col-lg-6">
@@ -30,7 +30,7 @@
             <div class="col-lg-5">
                 <div class="section-header text-center has--bg">
                     <div class="header-image"><img src="{{ asset('public/website/assets/images/elements/header-el.png')}}" alt="image"></div>
-                    <h2 class="section-title">Mobile Games</h2>
+                    <h2 class="section-title">PC Games</h2>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="col-lg-4 mb-500  wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
                 <div class="game-card">
                     <div class="game-card__thumb">
-                        <a href="{{ url('game-mobile/'.$data->slug.'') }}"><img src="{{ asset('public/asset/game/'.$data->picture )}}" alt="image"></a>
+                        <a href="{{ url('game-pc/'.$data->slug.'') }}"><img src="{{ asset('public/asset/game/'.$data->picture )}}" alt="image"></a>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                     <span class="section-sub-title">RECENT POSTS</span>
                     <h2 class="section-title">Game News</h2>
                 </div>
-                <a href="{{ url('game-mobile/article') }}" class="cmn-btn">View All posts</a>
+                <a href="{{ url('news') }}" class="cmn-btn">View All posts</a>
             </div>
             <div class="col-lg-8 mt-lg-0 mt-5">
                 <div class="blog-slider">
@@ -97,10 +97,10 @@
                                 </div>
                                 <div class="post-card__content">
                                     <span class="date">{{ date('d-m-Y', strtotime($item->created_at)) }}</span>
-                                    <h3><a href="{{ url('article/'.$item->kategori.'/'.$item->slug.'') }}">{!! Str::limit($item->judul,50) !!}</a></h3>
+                                    <h3><a href="{{ url('news/'.$item->kategori.'/'.$item->slug.'') }}">{!! Str::limit($item->judul,50) !!}</a></h3>
                                     <div class="post-author mt-3">
                                         <div class="post-author__thumb">
-                                            <img src="{{ asset('public/website/assets/images/blog/author.png') }}" alt="image">
+                                            <img src="{{asset('public/website/assets/images/icon/author.png')}}" alt="image">
                                         </div>
                                         <a class="post-author__name">{{ $item->penulis }}</a>
                                     </div>

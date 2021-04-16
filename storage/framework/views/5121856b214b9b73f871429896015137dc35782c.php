@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-title"><?php echo e($data1); ?></h2>
+                <h2 class="page-title"><?php echo e($title); ?></h2>
                 <ul class="page-list">
                     <li><a href="<?php echo e(url('/game-mobile')); ?>">Home</a></li>
                     <li><?php echo e($data1); ?></li>
@@ -19,7 +19,7 @@
             <div class="col-lg-8">
                 <div class="section-header text-center has--bg">
                     <div class="header-image"><img src="<?php echo e(asset('public/website/assets/images/elements/header-el.png')); ?>" alt="image"></div>
-                    <h2 class="section-title"><?php echo e($data1); ?></h2>
+                    <h2 class="section-title"><?php echo e($title); ?></h2>
                 </div>
             </div>
         </div>

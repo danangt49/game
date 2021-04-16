@@ -187,43 +187,39 @@ Route::middleware('admin')->prefix('admin')->namespace('Admin')->group(function 
 
     Route::get('/', 'LandingpageController@index');
     
-
-    //pc
-    Route::namespace('PC')->group(function () {
-        Route::get('/game-pc', 'PcController@index');
-        Route::get('/game-pc/list', 'PcController@list');
-        Route::get('/faqs', 'FAQController@index');
-        Route::get('/schedules', 'ScheduleController@index');
-        Route::get('/schedules/{slug}', 'ScheduleController@tampil');
-        Route::get('/contact', 'ContactController@index');
-        Route::post('/contact', 'ContactController@send');
-        Route::get('/news', 'ArticleController@index');
-        Route::get('/news/{any}', 'ArticleController@category');
-        Route::get('/news/{any}/{slug}', 'ArticleController@detail');
-        Route::get('/search', 'SearchController@index')->name('search');
-        Route::get('{any}', 'PageController@index');
-        Route::get('/game-pc/{slug}', 'GamesController@index');
+    Route::get('/game-pc', 'PC\PcController@index')->name('game-pc');
+    Route::get('/game-pc/list', 'PC\PcController@list');
+    Route::get('/game-mobile', 'MOBILE\MobileController@index')->name('game-mobile');
+    Route::get('/game-mobile/list', 'MOBILE\MobileController@list');
     
-    });
-   
-    
-    //mobile
-    Route::namespace('MOBILE')->group(function () {
-        Route::get('/game-mobile', 'MobileController@index');
-        Route::get('/game-mobile/list', 'MobileController@list');
-        Route::get('/faq', 'FAQController@index');
-        Route::get('/schedule', 'ScheduleController@index');
-        Route::get('/schedule/{slug}', 'ScheduleController@tampil');
-        Route::get('/kontak', 'ContactController@index');
-        Route::post('/kontak', 'ContactController@send');
-        Route::get('/article', 'ArticleController@index');
-        Route::get('/article/{any}', 'ArticleController@category');
-        Route::get('/article/{any}/{slug}', 'ArticleController@detail');
-        Route::get('/search', 'SearchController@index')->name('search');
-        Route::get('{any}', 'PageController@index');
-        Route::get('/game-mobile/{slug}', 'GamesController@index');
+    Route::get('/faqs', 'PC\FAQController@index');
+    Route::get('/faq', 'MOBILE\FAQController@index');
 
-    });
+    Route::get('/schedules', 'PC\ScheduleController@index');
+    Route::get('/schedules/{slug}', 'PC\ScheduleController@tampil');
+    Route::get('/schedule', 'MOBILE\ScheduleController@index');
+    Route::get('/schedule/{slug}', 'MOBILE\ScheduleController@tampil');
+
+    Route::get('/contact', 'PC\ContactController@index');
+    Route::post('/contact', 'PC\ContactController@send');
+    Route::get('/kontak', 'MOBILE\ContactController@index');
+    Route::post('/kontak', 'MOBILE\ContactController@send');
+
+    Route::get('/news', 'PC\ArticleController@index');
+    Route::get('/news/{any}', 'PC\ArticleController@category');
+    Route::get('/news/{any}/{slug}', 'PC\ArticleController@detail');
+    Route::get('/article', 'MOBILE\ArticleController@index');
+    Route::get('/article/{any}', 'MOBILE\ArticleController@category');
+    Route::get('/article/{any}/{slug}', 'MOBILE\ArticleController@detail');
+
+    Route::get('/search', 'PC\SearchController@index')->name('search');
+    
+    Route::get('{any}', 'PC\PageController@index');
+    Route::get('{any}', 'MOBILE\PageController@index');
+    Route::get('/game-pc/{slug}', 'PC\GamesController@index');
+    Route::get('/game-mobile/{slug}', 'MOBILE\GamesController@index');
+
+
    
         
         

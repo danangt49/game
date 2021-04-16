@@ -2292,14 +2292,14 @@ span.is-active:after {
 .hero {
     padding-top: 200px;
     /*padding-top: 245px;*/
-    padding-bottom: 100px;
+    padding-bottom: 20px;
     position: relative;
 }
 
 @media (max-width: 1199px) {
     .hero {
         padding-top: 200px;
-        padding-bottom: 190px;
+        padding-bottom: 100px;
     }
 }
 
@@ -4679,7 +4679,7 @@ span.is-active:after {
 }
 
 .author {
-    padding: 50px;
+    padding: 20px;
     background-color: #160351;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -4694,13 +4694,13 @@ span.is-active:after {
 
 @media (max-width: 575px) {
     .author {
-        padding: 30px;
+        padding: 10px;
     }
 }
 
 .author__thumb {
-    width: 125px;
-    height: 125px;
+    width: 80px;
+    height: 85px;
     overflow: hidden;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -4719,15 +4719,15 @@ span.is-active:after {
 }
 
 .author__content {
-    width: calc(100% - 125px);
-    padding-left: 30px;
+    width: calc(70% - 95px);
+    padding-left: 40px;
 }
 
 @media (max-width: 767px) {
     .author__content {
         width: 100%;
         padding-left: 0;
-        margin-top: 30px;
+        /*margin-top: 30px;*/
     }
 }
 
@@ -4736,7 +4736,7 @@ span.is-active:after {
     font-weight: 600;
     color: #ec038b;
     font-size: 24px;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
 }
 
 .author__content .name {
@@ -5373,7 +5373,7 @@ span.is-active:after {
 }
 
 .footer-bottom {
-    padding-bottom: 30px;
+    /*padding-bottom: 30px;*/
 }
 
 .copy-right-text a {

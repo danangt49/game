@@ -13,7 +13,7 @@
         </div>
     </div>
 </section>
- <section class="pt-120 pb-120">
+<section class="pt-120 pb-120">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -28,13 +28,13 @@
             <div class="matches-tabs">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="all-matches-tab" data-toggle="tab" href="#all-matches" role="tab" aria-controls="all-matches" aria-selected="true">All</a>
+                        <a class="nav-link active" id="all-matches-tab" data-toggle="tab" href="#all-matches" role="tab" aria-controls="all-matches" aria-selected="true">SEMUA</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="upcoming-matches-tab" data-toggle="tab" href="#upcoming-matches" role="tab" aria-controls="upcoming-matches" aria-selected="false">Upcoming</a>
+                        <a class="nav-link" id="upcoming-matches-tab" data-toggle="tab" href="#upcoming-matches" role="tab" aria-controls="upcoming-matches" aria-selected="false">AKTIF</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="latest-result-tab" data-toggle="tab" href="#latest-result" role="tab" aria-controls="latest-result" aria-selected="false">Latest Result</a>
+                        <a class="nav-link" id="latest-result-tab" data-toggle="tab" href="#latest-result" role="tab" aria-controls="latest-result" aria-selected="false">SELESAI</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">

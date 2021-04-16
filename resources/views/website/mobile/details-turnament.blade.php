@@ -19,7 +19,7 @@
             <div class="col-lg-8">
                 <div class="section-header text-center has--bg">
                     <div class="header-image"><img src="{{ asset('public/website/assets/images/elements/header-el.png')}}" alt="image"></div>
-                    <h2 class="section-title">Detail Turnament</h2>
+                    <h2 class="section-title">Detail Pertandingan</h2>
                 </div>
             </div>
         </div>

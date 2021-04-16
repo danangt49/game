@@ -38,14 +38,14 @@
                                 <div class="game-card">
                                     <div class="game-card__thumb">
                                         <img src="{{asset('public/asset/game/'.$data->picture)}}" alt="image">
-                                        <h2>{{$data->match_name}}</h2>
-                                        <p>{!! $data->description !!}</p>
-                                        <p><i class="las la-calendar"></i> Tanggal : {{date('d-M-Y', strtotime($data->match_schedule))}}</p>
-                                        <p><i class="las la-map"></i> Maps : {{ $data->maps }}</p>
-                                        <p><i class="las la-users"></i> Total Player : {{ $data->players }}</p>
-                                        <p><i class="las la-map-marker-alt"></i> Tipe : {{ $data->match_type }}</p>
-                                        <p><i class="las la-tag"></i> Biaya : {{ $data->fee }}</p>
-                                        <p><i class="las la-trophy"></i> Total Hadiah : {{ $data->prize }}</p>
+                                        <h4 style="padding-left:10px;">{{$data->match_name}}</h4>
+                                        <span style="padding-left:10px;"><p>{!! $data->description !!}</p></span>
+                                        <p style="padding-left:10px;"><i class="las la-calendar"></i> Tanggal : {{date('d-M-Y', strtotime($data->match_schedule))}}</p>
+                                        <p style="padding-left:10px;"><i class="las la-map"></i> Maps : {{ $data->maps }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-users"></i> Total Player : {{ $data->players }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-map-marker-alt"></i> Mode : {{ $data->mode }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-tag"></i> Biaya : {{ $data->fee }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-trophy"></i> Total Hadiah : {{ $data->prize }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -72,14 +72,14 @@
                                 <div class="game-card">
                                     <div class="game-card__thumb">
                                         <img src="{{asset('public/asset/game/'.$data->picture)}}" alt="image">
-                                        <h2>{{$data->match_name}}</h2>
-                                        <p>{!! $data->description !!}</p>
-                                        <p><i class="las la-calendar"></i> Tanggal : {{date('d-M-Y', strtotime($data->match_schedule))}}</p>
-                                        <p><i class="las la-map"></i> Maps : {{ $data->maps }}</p>
-                                        <p><i class="las la-users"></i> Total Player : {{ $data->players }}</p>
-                                        <p><i class="las la-map-marker-alt"></i> Tipe : {{ $data->match_type }}</p>
-                                        <p><i class="las la-tag"></i> Biaya : {{ $data->fee }}</p>
-                                        <p><i class="las la-trophy"></i> Total Hadiah : {{ $data->prize }}</p>
+                                        <h2 style="padding-left:10px;">{{$data->match_name}}</h2> 
+                                        <span style="padding-left:10px;"><p>{!! $data->description !!}</p></span>
+                                        <p style="padding-left:10px;"><i class="las la-calendar"></i> Tanggal : {{date('d-M-Y', strtotime($data->match_schedule))}}</p>
+                                        <p style="padding-left:10px;"><i class="las la-map"></i> Maps : {{ $data->maps }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-users"></i> Total Player : {{ $data->players }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-map-marker-alt"></i> Tipe : {{ $data->match_type }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-tag"></i> Biaya : {{ $data->fee }}</p>
+                                        <p style="padding-left:10px;"><i class="las la-trophy"></i> Total Hadiah : {{ $data->prize }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="tab-pane" id="top-player" role="tabpanel">
                     <div class="single-matches-box">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center" style="padding-left:10px;">
                             @foreach ($top  as $key => $data)
                             @php $username= Applib::getUsername($data->user_id); @endphp
                             <div class="col-lg-12 mb-30" style="padding-top: 20px;">
@@ -107,8 +107,8 @@
                                     <div class="contact-item__icon">
                                         <i class="las la-trophy"></i>
                                     </div>
-                                    <div class="contact-item__content">
-                                        <h3 class="title">{{$username}}</h3>
+                                    <div class="contact-item__content" >
+                                        <h3 class="title" >{{$username}}</h3>
                                         <p>Point : {{$data->sum}}</p>
                                     </div>
                                 </div>

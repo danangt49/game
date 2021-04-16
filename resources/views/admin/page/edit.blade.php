@@ -55,8 +55,8 @@
                         <div class="form-group">
                             <label for="">Layout</label>
                             <select class="form-control" name="layout">
-                                <option value="fullwitdh" <?php if ($page->layout=="fullwitdh"): ?>selected<?php endif; ?>>Full Witdh</option>
-                                <option value="home" <?php if ($page->layout=="home"): ?>selected<?php endif; ?>>Home</option>
+                                <option value="pc" <?php if ($page->layout=="pc"): ?>selected<?php endif; ?>>PC</option>
+                                <option value="mobile" <?php if ($page->layout=="mobile"): ?>selected<?php endif; ?>>MOBILE</option>
                             </select>
                             @if($errors->has('layout')) 
                                 <div class="error text-danger">{{$errors->first('layout')}}</div>

@@ -8,7 +8,7 @@
                     <span class="hero__sub-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s"><?php echo e($slogan); ?></span>
                     <h2 class="hero__title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s"><?php echo e($title); ?></h2>
                     <p class=" wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.7s"><?php echo e($deskripsi_web); ?></p>
-                    <a href="#" class="cmn-btn wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.9s">Download now</a>
+                    <!--<a href="#" class="cmn-btn wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.9s">Download now</a>-->
                 </div>
             </div>
             <div class="col-lg-6">
@@ -85,7 +85,7 @@
                     <span class="section-sub-title">RECENT POSTS</span>
                     <h2 class="section-title">Game News</h2>
                 </div>
-                <a href="<?php echo e(url('game-pc/news')); ?>" class="cmn-btn">View All posts</a>
+                <a href="<?php echo e(url('news')); ?>" class="cmn-btn">View All posts</a>
             </div>
             <div class="col-lg-8 mt-lg-0 mt-5">
                 <div class="blog-slider">
@@ -97,10 +97,10 @@
                                 </div>
                                 <div class="post-card__content">
                                     <span class="date"><?php echo e(date('d-m-Y', strtotime($item->created_at))); ?></span>
-                                    <h3><a href="<?php echo e(url('game-pc/news/'.$item->kategori.'/'.$item->slug.'')); ?>"><?php echo Str::limit($item->judul,50); ?></a></h3>
+                                    <h3><a href="<?php echo e(url('news/'.$item->kategori.'/'.$item->slug.'')); ?>"><?php echo Str::limit($item->judul,50); ?></a></h3>
                                     <div class="post-author mt-3">
                                         <div class="post-author__thumb">
-                                            <img src="<?php echo e(asset('public/website/assets/images/blog/author.png')); ?>" alt="image">
+                                            <img src="<?php echo e(asset('public/website/assets/images/icon/author.png')); ?>" alt="image">
                                         </div>
                                         <a class="post-author__name"><?php echo e($item->penulis); ?></a>
                                     </div>

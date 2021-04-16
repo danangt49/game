@@ -12,6 +12,7 @@ class ScheduleController extends Controller
     public function index(){
         $setting                    = Setting::find(1);
 
+        $data['judul']				= 'HIU';
         $data['logo']				= $setting['logo'];
         $data['favicon']			= $setting['favicon'];
         $data['situs']				= $setting['nama'];
@@ -29,11 +30,28 @@ class ScheduleController extends Controller
         $data['instagram']			= $setting['instagram'];
         $data['twitter']			= $setting['twitter'];
         $data['youtube']			= $setting['youtube'];
-        $data['linkedin']			= $setting['linkedin'];
+        
         $data['data1']			    = 'JADWAL';
-        $data['all']                = Matches::get();
-        $data['upcoming']           = Matches::where('status', 'upcoming')->get();
-        $data['complete']           = Matches::where('status', 'complete')->get();
+        $data['all']                = Matches::join('games', 'matches.game_id', 'games.id')
+                                        ->where('games.category_id', '2')
+                                        ->orderBy('matches.created_at', 'DESC')
+                                        ->get();
+        $data['upcoming']           = Matches::join('games', 'matches.game_id', 'games.id')
+                                        ->where('games.category_id', '2')
+                                        ->where(function ($query) {
+                                            $query->where('matches.status', 'upcoming');
+                                        })
+                                        ->orderBy('matches.created_at', 'DESC')
+                                        ->get();
+                                        
+        $data['complete']           = Matches::join('games', 'matches.game_id', 'games.id')
+                                        ->where('games.category_id', '2')
+                                        ->where(function ($query) {
+                                            $query->where('matches.status', 'complate');
+                                        })
+                                        ->orderBy('matches.created_at', 'DESC')
+                                        ->get();
+                                        
         return view('website.mobile.schedule')->with($data);
     }
     
@@ -42,6 +60,7 @@ class ScheduleController extends Controller
 		$uri						    = Matches::where('slug',$slug)->take(1)->get();
         if($uri->count() > 0){
             $setting                    = Setting::find(1);
+            $data['judul']				= 'HIU';
             $data['logo']				= $setting['logo'];
             $data['favicon']			= $setting['favicon'];
             $data['situs']				= $setting['nama'];
@@ -59,7 +78,7 @@ class ScheduleController extends Controller
             $data['instagram']			= $setting['instagram'];
             $data['twitter']			= $setting['twitter'];
             $data['youtube']			= $setting['youtube'];
-            $data['linkedin']			= $setting['linkedin'];
+            
             $data['data1']			    = 'DETAIL TURNAMENT';
             $data['match']              = Matches::where('slug', $slug)->first();
         
