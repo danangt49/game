@@ -196,9 +196,8 @@ Route::middleware('admin')->prefix('admin')->namespace('Admin')->group(function 
     Route::get('/faq', 'MOBILE\FAQController@index');
 
     Route::get('/schedules', 'PC\ScheduleController@index');
-    Route::get('/schedules/{slug}', 'PC\ScheduleController@tampil');
     Route::get('/schedule', 'MOBILE\ScheduleController@index');
-    Route::get('/schedule/{slug}', 'MOBILE\ScheduleController@tampil');
+
 
     Route::get('/contact', 'PC\ContactController@index');
     Route::post('/contact', 'PC\ContactController@send');
@@ -218,6 +217,8 @@ Route::middleware('admin')->prefix('admin')->namespace('Admin')->group(function 
     Route::get('{any}', 'MOBILE\PageController@index');
     Route::get('/game-pc/{slug}', 'PC\GamesController@index');
     Route::get('/game-mobile/{slug}', 'MOBILE\GamesController@index');
+    Route::get('/schedules/{slug}', 'PC\ScheduleController@tampil');
+    Route::get('//schedule/{slug}', 'MOBILE\ScheduleController@tampil');
 
 
    

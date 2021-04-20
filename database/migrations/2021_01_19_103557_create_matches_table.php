@@ -16,7 +16,7 @@ class CreateMatchesTable extends Migration
         Schema::create('matches', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('game_id')->nullable();
-            $table->string('slug');
+            $table->string('match_slug');
             $table->text('room')->nullable();
             $table->text('room_password')->nullable();
             $table->string('match_name')->nullable();   

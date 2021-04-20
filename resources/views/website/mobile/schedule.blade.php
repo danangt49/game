@@ -45,7 +45,7 @@
                                 @foreach ($all as $data)
                                 <div class="col-lg-4 col-md-4" style="padding-top: 30px;">
                                     <div class="matches-team">
-                                        <h3><a href="{{url('schedule/'.$data->slug.'')}}">{{$data->match_name}}</a></h3>
+                                        <h3><a href="{{url('schedule/'.$data->match_slug.'')}}">{{$data->match_name}}</a></h3>
                                         <img src="{{asset('public/asset/game/'.$data->picture)}}" alt="image">
                                         <span class="date-time"> Tanggal : {{date('d-M-Y', strtotime($data->match_schedule))}}</span>
                                     </div>

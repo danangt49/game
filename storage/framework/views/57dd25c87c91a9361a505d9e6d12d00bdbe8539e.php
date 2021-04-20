@@ -44,7 +44,7 @@
                                 <?php $__currentLoopData = $all; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="col-lg-4 col-md-4" style="padding-top: 30px;">
                                     <div class="matches-team">
-                                        <h3><a href="<?php echo e(url('schedule/'.$data->slug.'')); ?>"><?php echo e($data->match_name); ?></a></h3>
+                                        <h3><a href="<?php echo e(url('schedule/'.$data->match_slug.'')); ?>"><?php echo e($data->match_name); ?></a></h3>
                                         <img src="<?php echo e(asset('public/asset/game/'.$data->picture)); ?>" alt="image">
                                         <span class="date-time"> Tanggal : <?php echo e(date('d-M-Y', strtotime($data->match_schedule))); ?></span>
                                     </div>

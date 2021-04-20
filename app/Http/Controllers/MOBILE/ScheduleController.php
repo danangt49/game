@@ -56,10 +56,12 @@ class ScheduleController extends Controller
     }
     
     public function tampil(Request $request){
+        $setting                    = Setting::find(1);
         $slug						    = $request->segment(2);
-		$uri						    = Matches::where('slug',$slug)->take(1)->get();
+		$uri						    = Matches::where('match_slug',$slug)->take(1)->get();
         if($uri->count() > 0){
-            $setting                    = Setting::find(1);
+            $url						= Matches::find($uri[0]['id']);
+
             $data['judul']				= 'HIU';
             $data['logo']				= $setting['logo'];
             $data['favicon']			= $setting['favicon'];
@@ -80,7 +82,7 @@ class ScheduleController extends Controller
             $data['youtube']			= $setting['youtube'];
             
             $data['data1']			    = 'DETAIL TURNAMENT';
-            $data['match']              = Matches::where('slug', $slug)->first();
+            $data['match']              = Matches::where('match_slug', $slug)->first();
         
         return view('website.mobile.details-turnament')->with($data);
         }else{
@@ -88,3 +90,5 @@ class ScheduleController extends Controller
 		}
     }
 }
+
+

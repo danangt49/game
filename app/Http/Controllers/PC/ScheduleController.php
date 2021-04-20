@@ -3,6 +3,7 @@ namespace App\Http\Controllers\PC;
 use App\Http\Controllers\Controller;
 
 use App\Game;
+use App\Libraries\Applib;
 use App\Matches;
 use App\Setting;
 use Illuminate\Http\Request;
@@ -55,10 +56,12 @@ class ScheduleController extends Controller
     }
     
     public function tampil(Request $request){
+
+        $setting                        = Setting::find(1);
         $slug						    = $request->segment(2);
-		$uri						    = Matches::where('slug',$slug)->take(1)->get();
+		$uri						    = Matches::where('match_slug',$slug)->take(1)->get();
         if($uri->count() > 0){
-            $setting                    = Setting::find(1);
+            $url						= Matches::find($uri[0]['id']);
             $data['judul']				= 'HIU';
             $data['logo']				= $setting['logo'];
             $data['favicon']			= $setting['favicon'];
@@ -77,11 +80,16 @@ class ScheduleController extends Controller
             $data['instagram']			= $setting['instagram'];
             $data['twitter']			= $setting['twitter'];
             $data['youtube']			= $setting['youtube'];
-            
+            // $data['data2']		    	= $url['slug'];
+
+            $idgame                     = Applib::carimatchID($slug);
             $data['data1']			    = 'DETAIL TURNAMENT';
-            $data['match']              = Matches::where('slug', $slug)->first();
+            $data['match']              = Matches::join('games', 'matches.game_id', $idgame)
+                                        ->where('games.category_id', '2')
+                                        ->orderBy('matches.created_at', 'DESC')
+                                        ->get();
         
-        return view('website.pc.details-turnament')->with($data);
+        return view('website.pc.details-turnament',compact(['idgame']))->with($data);
         }else{
 			abort(404);
 		}

@@ -7,6 +7,7 @@ use App\User;
 use App\FAQCategory;
 use App\CategoryMenu;
 use App\Game;
+use App\Matches;
 use App\Menu;
 use App\MenuItems;
 use App\Modul;
@@ -183,6 +184,18 @@ class Applib
 
     public static function carigameID($slug){
         $query                      = Game::where('slug','=',$slug)->get();
+		if($query->count() > 0){
+			foreach($query as $h){
+				$hasil = $h->id;
+			}
+		}else{
+			$hasil = '';
+		}
+		return $hasil;
+    }
+
+    public static function carimatchID($slug){
+        $query                      = Matches::where('match_slug','=',$slug)->get();
 		if($query->count() > 0){
 			foreach($query as $h){
 				$hasil = $h->id;
