@@ -25,8 +25,8 @@
                             <div class="form-group">
                                 <label for="">Slide</label>
                                 <select class="form-control" name="slide">
-                                    <option value="yes" <?php if ($banner->slide=="yes"): ?>selected<?php endif; ?>>Yes</option>
-                            <option value="no" <?php if ($banner->slide=="no"): ?>selected<?php endif; ?>>No</option>
+                                    <option value="up" <?php if ($banner->slide=="up"): ?>selected<?php endif; ?>>Up</option>
+                                    <option value="down" <?php if ($banner->slide=="down"): ?>selected<?php endif; ?>>Down</option>
                                 </select>
                                 <?php if($errors->has('slide')): ?> 
                                     <div class="error text-danger"><?php echo e($errors->first('slide')); ?></div>

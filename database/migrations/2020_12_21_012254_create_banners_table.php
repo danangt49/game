@@ -16,7 +16,7 @@ class CreateBannersTable extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->enum('slide', ['yes','no'])->default('yes');
+            $table->enum('slide', ['up','down'])->default('up');
             $table->enum('publish', ['false','true'])->default('true');
             $table->text('picture')->nullable();
             $table->timestamps();

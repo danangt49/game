@@ -38,8 +38,8 @@
                                             <div class="form-group">
                                                 <label for="">Slide</label>
                                                 <select class="form-control" name="slide">
-                                                <option value="yes">Yes</option>
-                                                <option value="no">No</option>
+                                                <option value="up">Up</option>
+                                                <option value="down">Down</option>
                                                 </select>
                                                 <?php if($errors->has('slide')): ?> 
                                                     <div class="error text-danger"><?php echo e($errors->first('slide')); ?></div>
@@ -95,10 +95,10 @@
                                             }else{
                                                 $stt = "<span class='badge badge-success'>Active</span>";
                                             }
-                                            if($banner->slide == 'no'){
-                                                $sld = "<span class='badge badge-danger'>No</span>";
+                                            if($banner->slide == 'down'){
+                                                $sld = "<span class='badge badge-danger'>Down</span>";
                                             }else{
-                                                $sld = "<span class='badge badge-success'>Yes</span>";
+                                                $sld = "<span class='badge badge-success'>Up</span>";
                                             }
                                             if($banner->picture == null || $banner==''){
                                                 $img = "<a href='".url(asset('public/asset/banner/no-image.png'))."' class='fancy-view'>
