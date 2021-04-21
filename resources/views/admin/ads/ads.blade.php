@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Banner')
+@section('title', 'ads')
 
 @section('content_header')
-    <h1>Banner</h1>
+    <h1>Ads</h1>
 @stop
 @section('content')
 <div class="page-wrapper">
@@ -18,40 +18,12 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{url('admin/banner/store')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{url('admin/ads/store')}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Name</label>
-                                                <input type="text" class="form-control" name="name">
-                                                @if($errors->has('name'))
-                                                    <div class="error text-danger">{{$errors->first('name')}}</div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Slide</label>
-                                                <select class="form-control" name="slide">
-                                                <option value="yes">Yes</option>
-                                                <option value="no">No</option>
-                                                </select>
-                                                @if($errors->has('slide')) 
-                                                    <div class="error text-danger">{{$errors->first('slide')}}</div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Publish</label><br/>
-                                                <input type="checkbox" name="publish" id="publish" data-toggle="toggle" checked>
-                                                <input class="form-control" name="statuspublish" id="statuspublish" type="hidden" readonly value="true">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Image</label>
                                                 <input type="file" class="form-control" name="picture">
@@ -59,7 +31,7 @@
                                                     <div class="error text-danger">{{$errors->first('picture')}}</div>
                                                 @endif
                                                 <br/>
-                                                <span>Banner size (760x460) .png or .jpg</span>
+                                                <span>ads size (760x460) .png or .jpg</span>
                                             </div>
                                         </div>
                                     </div>
@@ -78,43 +50,27 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">No</th>
-                                                <th width="30%">Name</th>
-                                                <th width="15%">Publish</th>
-                                                <th width="15%">Slide</th>
                                                 <th width="25%">Image</th>
                                                 <th width="20%">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($data_banner as $key => $banner)
+                                            @foreach($data_ads as $key => $ads)
                                             @php 
-                                            if($banner->publish == 'false'){
-                                                $stt = "<span class='badge badge-danger'>Not Active</span>";
-                                            }else{
-                                                $stt = "<span class='badge badge-success'>Active</span>";
-                                            }
-                                            if($banner->slide == 'no'){
-                                                $sld = "<span class='badge badge-danger'>No</span>";
-                                            }else{
-                                                $sld = "<span class='badge badge-success'>Yes</span>";
-                                            }
-                                            if($banner->picture == null || $banner==''){
-                                                $img = "<a href='".url(asset('public/asset/banner/no-image.png'))."' class='fancy-view'>
-                                                        <img src=".asset('public/asset/banner/no-image.png')." width='100px' height='100px' class='center img-responsive'></a>";
-                                            }else{
-                                                $img = "<a href='".url(asset('public/asset/banner/'.$banner->picture))."' class='fancy-view'>
-                                                        <img src='".asset('public/asset/banner/'.$banner->picture)."' width='100px' height='100px' class='center img-responsive'></a>";
-                                            }
+                                                if($ads->picture == null || $ads==''){
+                                                    $img = "<a href='".url(asset('public/asset/ads/no-image.png'))."' class='fancy-view'>
+                                                            <img src=".asset('public/asset/ads/no-image.png')." width='100px' height='100px' class='center img-responsive'></a>";
+                                                }else{
+                                                    $img = "<a href='".url(asset('public/asset/ads/'.$ads->picture))."' class='fancy-view'>
+                                                            <img src='".asset('public/asset/ads/'.$ads->picture)."' width='100px' height='100px' class='center img-responsive'></a>";
+                                                }
                                             @endphp
                                             <tr>
-                                                <td>{{$key+1}}</td>
-                                                <td>{{$banner->name}}</td>
-                                                <td>{!! $stt !!}</td>
-                                                <td>{!! $sld !!}</td>
+                                                <td>{{ $key+1 }}</td>
                                                 <td>{!! $img !!}</td>                           
                                                 <td>
-                                                        <a class="btn btn-warning btn-xs" href="{{ url('admin/banner/edit/'.$banner->id)}}"><i class="fas fa-tools"></i></a>
-                                                        <button data-id="{{ $banner->id }}" class="btn-xs btn btn-danger delete-banner"><i class="fas fa-trash-restore"></i></button>
+                                                        <a class="btn btn-warning btn-xs" href="{{ url('admin/ads/edit/'.$ads->id)}}"><i class="fas fa-tools"></i></a>
+                                                        <button data-id="{{ $ads->id }}" class="btn-xs btn btn-danger delete-ads"><i class="fas fa-trash-restore"></i></button>
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -146,15 +102,9 @@
      
         $(document).ready( function () {
             $('#laravel_datatable').DataTable();
-
-            $(function() {
-                $('#publish').change(function() {
-                    $('#statuspublish').val($(this).prop('checked'))
-                })
-            });
         });
 
-        $('body').on('click', '.delete-banner', function () {
+        $('body').on('click', '.delete-ads', function () {
             var csrf_token = "{{ csrf_token() }}";
             var document_id = $(this).data("id");
             swal({
@@ -167,7 +117,7 @@
             .then((result) => {
                 if (result.value) {
                     $.ajax({
-                        url: "{{ url('admin/banner/delete')}}"+'/'+ document_id,
+                        url: "{{ url('admin/ads/delete')}}"+'/'+ document_id,
                         type: "POST",
                         data: {
                             '_method': 'GET',

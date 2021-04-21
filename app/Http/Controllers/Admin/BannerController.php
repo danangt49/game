@@ -20,11 +20,13 @@ class BannerController extends Controller
         $this->validate(
             $request,
             [
-                'name'      => 'required|string|max:30',
-                'picture'   => 'required',
+                'name'             => 'required|string|max:30',
+                'slide'            => 'required',
+                'picture'          => 'required',
             ],
             [
                 'name.required'    => 'Must be filled !!',
+                'slide.required'   => 'Must be filled !!',
                 'picture.required' => 'Must be filled !!'
             ]
         );
@@ -34,15 +36,17 @@ class BannerController extends Controller
             $path                   = 'public/asset/banner';
             $file->move($path,$filename);
             $data = [
-                'name'	      => $request->name,
-                'publish'	  => $request->statuspublish,
-                'picture'     => $filename,
+                'name'	            => $request->name,
+                'slide'	            => $request->slide,
+                'publish'	        => $request->statuspublish,
+                'picture'           => $filename,
             ];
         }else{
             $data = [
-                'name'	      => $request->name,
-                'publish'	  => $request->statuspublish,
-                'picture'     => '',
+                'name'	            => $request->name,
+                'slide'	            => $request->slide,
+                'publish'	        => $request->statuspublish,
+                'picture'           => '',
             ];
         }
         Banner::create($data);
@@ -66,16 +70,18 @@ class BannerController extends Controller
             $path                   = 'public/asset/banner';
             $file->move($path,$filename);
             $data = [
-                'name'	      => $request->name,
-                'publish'	  => $request->statuspublish,
-                'picture'     => $filename,
+                'name'	            => $request->name,
+                'slide'	            => $request->slide,
+                'publish'	        => $request->statuspublish,
+                'picture'           => $filename,
             ];
-            File::delete('public/asset/category/'.$picturelama);
+            File::delete('public/asset/banner/'.$picturelama);
         }else{
             $data = [
-                'name'	      => $request->name,
-                'publish'	  => $request->statuspublish,
-                'picture'     => $picturelama,
+                'name'	            => $request->name,
+                'slide'	            => $request->slide,
+                'publish'	        => $request->statuspublish,
+                'picture'           => $picturelama,
             ];
         }
         

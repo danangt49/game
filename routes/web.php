@@ -141,6 +141,13 @@ Route::middleware('admin')->prefix('admin')->namespace('Admin')->group(function 
     Route::post('/categorymenu/update/{id}', 'CategoryMenuController@update');
     Route::get('/categorymenu/delete/{id}', 'CategoryMenuController@delete');
     
+    //ads
+    Route::get('/ads', 'AdsController@index')->name('ads');
+    Route::post('/ads/store', 'AdsController@store');
+    Route::get('/ads/edit/{id}', 'AdsController@edit');
+    Route::post('/ads/update/{id}', 'AdsController@update');
+    Route::get('/ads/delete/{id}', 'AdsController@delete');
+
     //bammer
     Route::get('/banner', 'BannerController@index')->name('banner');
     Route::post('/banner/store', 'BannerController@store');
